@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.demo.dao.filedao">
+
+    <insert id="savefile" >
+        INSERT  INTO file (name,dir) values (#{name},#{dir})
+    </insert>
+    <select id="getdir" parameterType="String" resultType="String">
+        select dir from file where name=#{name}
+    </select>
+    <select id="getall" resultType="String">
+        select name from file
+    </select>
+</mapper>
